@@ -106,6 +106,24 @@ export default function NewProduct() {
             placeholder="100"
             onChange={handleChange}
           />
+          </div>
+          <div className="addProductItem">
+          <label>Size</label>
+          <input
+            name="size"
+            type="text"
+            placeholder="S,L,M,XL "
+            onChange={handleChange}
+          />
+        </div>
+        <div className="addProductItem">
+          <label>Color</label>
+          <input
+            name="color"
+            type="text"
+            placeholder="blue,black,red"
+            onChange={handleChange}
+          />
         </div>
         <div className="addProductItem">
           <label>Categories</label>

@@ -6,7 +6,7 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBlPtkP6zFFiLtqBxPRpVAnhG4oD2tpjwY",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "red-network-90896.firebaseapp.com",
   projectId: "red-network-90896",
   storageBucket: "red-network-90896.appspot.com",

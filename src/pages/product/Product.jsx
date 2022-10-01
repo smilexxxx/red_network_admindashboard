@@ -96,6 +96,10 @@ export default function Product() {
             <input type="text" placeholder={product.desc} />
             <label>Price</label>
             <input type="text" placeholder={product.price} />
+            <label>Size</label>
+            <input type="text" placeholder={product.size} />
+            <label>Color</label>
+            <input type="text" placeholder={product.color} />
             <label>In Stock</label>
             <select name="inStock" id="idStock">
               <option value="true">Yes</option>
