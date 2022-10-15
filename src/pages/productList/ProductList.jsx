@@ -60,15 +60,20 @@ export default function ProductList() {
   ];
 
   return (
-    <div className="productList">
-      <DataGrid
-        rows={products}
-        disableSelectionOnClick
-        columns={columns}
-        getRowId={(row) => row._id}
-        pageSize={8}
-        checkboxSelection
-      />
-    </div>
+    <>
+      <Link to="/newproduct">
+        <button className="productAddButton">Create new product</button>
+      </Link>
+      <div className="productList">
+        <DataGrid
+          rows={products}
+          disableSelectionOnClick
+          columns={columns}
+          getRowId={(row) => row._id}
+          pageSize={8}
+          checkboxSelection
+        />
+      </div>
+    </>
   );
 }

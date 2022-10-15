@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://rednetworkbackend-production.up.railway.app/api/";
+const BASE_URL = "https://fair-cyan-catfish-cape.cyclic.app/api/";
 const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
   .currentUser.accessToken;
 
