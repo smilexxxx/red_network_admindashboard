@@ -6,54 +6,71 @@ import {
   PhoneAndroid,
   Publish,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { userRequest } from "../../requestMethods";
 import "./user.css";
+import { useSelector } from "react-redux";
 
 export default function User() {
+  const location = useLocation();
+  const [user, setUser] = useState({});
+  const userId = location.pathname.split("/")[2];
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const res = await userRequest.get("/users/find/" + userId);
+        setUser(res.data);
+        console.log(res.data);
+      } catch {}
+    };
+    getUser();
+  }, [userId]);
+
+  //const user = useSelector((state) =>
+  // state.user.users.find((user) => user._id === userId)
+  //);
   return (
     <div className="user">
       <div className="userTitleContainer">
-        <h1 className="userTitle">Edit User</h1>
-        <Link to="/newUser">
-          <button className="userAddButton">Create</button>
-        </Link>
+        <h1 className="userTitle">User Details</h1>
       </div>
       <div className="userContainer">
         <div className="userShow">
           <div className="userShowTop">
             <img
-              src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src="https://crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif"
               alt=""
               className="userShowImg"
             />
             <div className="userShowTopTitle">
-              <span className="userShowUsername">Anna Becker</span>
-              <span className="userShowUserTitle">Software Engineer</span>
+              <span className="userShowUsername">{user.username}</span>
             </div>
           </div>
           <div className="userShowBottom">
             <span className="userShowTitle">Account Details</span>
             <div className="userShowInfo">
               <PermIdentity className="userShowIcon" />
-              <span className="userShowInfoTitle">annabeck99</span>
+              <span className="userShowInfoTitle">{user.username}</span>
             </div>
             <div className="userShowInfo">
               <CalendarToday className="userShowIcon" />
-              <span className="userShowInfoTitle">10.12.1999</span>
+              <span className="userShowInfoTitle">{user.createdAt} </span>
             </div>
             <span className="userShowTitle">Contact Details</span>
             <div className="userShowInfo">
               <PhoneAndroid className="userShowIcon" />
-              <span className="userShowInfoTitle">+1 123 456 67</span>
+              <span className="userShowInfoTitle">{user.mobile}</span>
             </div>
             <div className="userShowInfo">
               <MailOutline className="userShowIcon" />
-              <span className="userShowInfoTitle">annabeck99@gmail.com</span>
+              <span className="userShowInfoTitle">{user.email} </span>
             </div>
-            <div className="userShowInfo">
+            {/*<div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
               <span className="userShowInfoTitle">New York | USA</span>
-            </div>
+            </div>*/}
           </div>
         </div>
         <div className="userUpdate">
@@ -92,20 +109,12 @@ export default function User() {
                   className="userUpdateInput"
                 />
               </div>
-              <div className="userUpdateItem">
-                <label>Address</label>
-                <input
-                  type="text"
-                  placeholder="New York | USA"
-                  className="userUpdateInput"
-                />
-              </div>
             </div>
             <div className="userUpdateRight">
               <div className="userUpdateUpload">
                 <img
                   className="userUpdateImg"
-                  src="https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                  src="https://crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif"
                   alt=""
                 />
                 <label htmlFor="file">

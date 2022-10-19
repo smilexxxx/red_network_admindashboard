@@ -38,9 +38,9 @@ export default function Product() {
     const getStats = async () => {
       try {
         const res = await userRequest.get("orders/income?pid=" + productId);
-        const list = res.data.sort((a,b)=>{
-            return a._id - b._id
-        })
+        const list = res.data.sort((a, b) => {
+          return a._id - b._id;
+        });
         list.map((item) =>
           setPStats((prev) => [
             ...prev,
@@ -48,7 +48,7 @@ export default function Product() {
           ])
         );
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     getStats();
