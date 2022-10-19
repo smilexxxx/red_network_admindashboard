@@ -22,18 +22,6 @@ const userSlice = createSlice({
     logout: (state) => {
       state.currentUser = null;
     },
-    getUserStart: (state) => {
-      state.isFetching = true;
-      state.error = false;
-    },
-    getUserSuccess: (state, action) => {
-      state.isFetching = false;
-      state.products = action.payload;
-    },
-    getUserFailure: (state) => {
-      state.isFetching = false;
-      state.error = true;
-    },
     deleteUserStart: (state) => {
       state.isFetching = true;
       state.error = false;
@@ -56,9 +44,6 @@ export const {
   loginStart,
   loginSuccess,
   loginFailure,
-  getUserStart,
-  getUserSuccess,
-  getUserFailure,
   deleteUserStart,
   deleteUserSuccess,
   deleteUserFailure,

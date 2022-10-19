@@ -1,16 +1,15 @@
 import {
   CalendarToday,
-  LocationSearching,
+  //LocationSearching,
   MailOutline,
   PermIdentity,
   PhoneAndroid,
   Publish,
 } from "@material-ui/icons";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { userRequest } from "../../requestMethods";
 import "./user.css";
-import { useSelector } from "react-redux";
 
 export default function User() {
   const location = useLocation();
@@ -28,9 +27,6 @@ export default function User() {
     getUser();
   }, [userId]);
 
-  //const user = useSelector((state) =>
-  // state.user.users.find((user) => user._id === userId)
-  //);
   return (
     <div className="user">
       <div className="userTitleContainer">
