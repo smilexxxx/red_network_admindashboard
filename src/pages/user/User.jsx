@@ -1,6 +1,6 @@
 import {
   CalendarToday,
-  //LocationSearching,
+  LocationSearching,
   MailOutline,
   PermIdentity,
   PhoneAndroid,
@@ -21,7 +21,7 @@ export default function User() {
       try {
         const res = await userRequest.get("/users/find/" + userId);
         setUser(res.data);
-        // console.log(res.data);
+        //console.log(res.data);
       } catch {}
     };
     getUser();
@@ -63,10 +63,10 @@ export default function User() {
               <MailOutline className="userShowIcon" />
               <span className="userShowInfoTitle">{user.email} </span>
             </div>
-            {/*<div className="userShowInfo">
+            <div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
-              <span className="userShowInfoTitle">New York | USA</span>
-            </div>*/}
+              <span className="userShowInfoTitle">{user.address}</span>
+            </div>
           </div>
         </div>
         <div className="userUpdate">

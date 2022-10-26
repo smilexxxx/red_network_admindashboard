@@ -2,9 +2,9 @@ import axios from "axios";
 
 const BASE_URL = "https://fair-cyan-catfish-cape.cyclic.app/api/";
 //const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
-// .currentUser.accessToken;
+//  .currentUser.accessToken;
 const TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzU0OGQ1OTk0YjI1YzM1MmJlOWU0MCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2NjE4MzA4MywiZXhwIjoxNjY2NDQyMjgzfQ.qvSsokEEvKho0d6Lr4WFhqA5WnWL3jGBnw0uW9SkMGE";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTY1NWUxY2M5ZjViNWE4ZGY3NDM3OSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2Njc2NzAxOSwiZXhwIjoxNjY3MDI2MjE5fQ.H_Ov-QvbrH8f93cPC6k3ZoFk3u7Layj5aqt-Do_xS1I";
 
 //console.log(
 // JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser
