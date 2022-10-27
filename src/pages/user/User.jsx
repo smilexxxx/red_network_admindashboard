@@ -4,7 +4,7 @@ import {
   MailOutline,
   PermIdentity,
   PhoneAndroid,
-  Publish,
+  //Publish,
 } from "@material-ui/icons";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -69,7 +69,7 @@ export default function User() {
             </div>
           </div>
         </div>
-        <div className="userUpdate">
+        {/*      <div className="userUpdate">
           <span className="userUpdateTitle">Edit</span>
           <form className="userUpdateForm">
             <div className="userUpdateLeft">
@@ -121,7 +121,7 @@ export default function User() {
               <button className="userUpdateButton">Update</button>
             </div>
           </form>
-        </div>
+        </div>*/}
       </div>
     </div>
   );

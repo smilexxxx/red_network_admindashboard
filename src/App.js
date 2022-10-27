@@ -9,6 +9,8 @@ import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "./pages/login/Login";
+import FeedbackList from "./pages/feedback/feedbackList";
+import Feedback from "./pages/feedback/feedback";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -43,6 +45,12 @@ function App() {
               </Route>
               <Route path="/newproduct">
                 <NewProduct />
+              </Route>
+              <Route path="/feedbacks">
+                <FeedbackList />
+              </Route>
+              <Route path="/feedback/:feedbackId">
+                <Feedback />
               </Route>
             </div>
           </>
