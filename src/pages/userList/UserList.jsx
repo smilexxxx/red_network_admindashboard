@@ -27,10 +27,6 @@ export default function UserList() {
     deleteUser(id, dispatch);
   };
 
-  //const handleDelete = (id) => {
-  // setData(data.filter((item) => item.id !== id));
-  //};
-
   const columns = [
     { field: "_id", headerName: "ID", width: 90 },
     {
@@ -72,7 +68,7 @@ export default function UserList() {
         return (
           <>
             <Link to={"/user/" + params.row._id}>
-              <button className="userListEdit">Edit</button>
+              <button className="userListEdit">View</button>
             </Link>
             <DeleteOutline
               className="userListDelete"
