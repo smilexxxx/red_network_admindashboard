@@ -1,6 +1,12 @@
 import React from "react";
 import "./topbar.css";
-import { NotificationsNone, Language, Settings } from "@material-ui/icons";
+import {
+  NotificationsNone,
+  Language,
+  Settings,
+  LockOpenRounded,
+} from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 export default function Topbar() {
   return (
@@ -21,6 +27,11 @@ export default function Topbar() {
           <div className="topbarIconContainer">
             <Settings />
           </div>
+          <Link to="/login">
+            <div className="topbarIconContainer">
+              <LockOpenRounded />
+            </div>
+          </Link>
           <img
             src="https://crowd-literature.eu/wp-content/uploads/2015/01/no-avatar.gif"
             alt=""
